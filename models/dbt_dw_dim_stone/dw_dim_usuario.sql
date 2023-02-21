@@ -26,6 +26,7 @@ select
     ,a.codigo_usuario
     ,a.estado_usuario
     ,a.cidade_usuario
+    ,getdate() as source_updated_dt  
 from dbt_dw_stone.stg_stone a
 )
 select a.* from atualiza_usuario a 
