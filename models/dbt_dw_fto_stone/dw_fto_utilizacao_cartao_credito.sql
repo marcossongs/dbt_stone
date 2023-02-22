@@ -21,6 +21,7 @@ select
     ,data_hora_transacao as source_updated_dt
     ,getdate() load_date        
     ,sum(valor_transacao) as valor_transacao
+    ,count(codigo_transacao) as total_transacao
 from dbt_dw_stone.stg_stone
 {% if is_incremental() %}
     where 
