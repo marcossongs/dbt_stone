@@ -21,7 +21,7 @@ as
  atualiza_usuario
 as
 (
-select
+select distinct
     md5(a.codigo_usuario) cod_usuario_id
     ,a.codigo_usuario
     ,a.estado_usuario
