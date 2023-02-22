@@ -16,8 +16,8 @@ select
     ,md5(data_transacao+hora_transacao) as date_id
     ,date_part(dayofweek, data_hora_transacao) as dia_semana_int
     ,md5(metodo_captura) as metodo_captura_id    
-    ,md5(bandeira_cartao+metodo_pagamento+estado_transacao) as inf_cartao_pag_id
-    ,md5(codigo_usuario) cod_usuario_id
+    ,md5(bandeira_cartao+metodo_pagamento+estado_transacao) as info_cartao_pag_id
+    ,md5(codigo_usuario+cidade_usuario) cod_usuario_id
     ,data_hora_transacao as source_updated_dt
     ,getdate() load_date        
     ,sum(valor_transacao) as valor_transacao
