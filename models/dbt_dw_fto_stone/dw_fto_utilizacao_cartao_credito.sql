@@ -23,8 +23,9 @@ select
     ,sum(valor_transacao) as valor_transacao
     ,count(codigo_transacao) as total_transacao
 from dbt_dw_stone.stg_stone
+    where
+        estado_usuario <> 'BH'
 {% if is_incremental() %}
-    where 
         source_updated_dt > '{{ get_max_event_time() }}'
 {% endif %}
     group by 1,2,3,4,5,6,7,8,9,10
