@@ -22,7 +22,7 @@ as
 as
 (
 select distinct
-    md5(a.codigo_usuario) cod_usuario_id
+    md5(a.codigo_usuario+a.cidade_usuario) cod_usuario_id
     ,a.codigo_usuario
     ,a.estado_usuario
     ,a.cidade_usuario
