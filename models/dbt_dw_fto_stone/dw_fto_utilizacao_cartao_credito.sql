@@ -13,7 +13,7 @@ select
     codigo_transacao
     ,cast(data_hora_transacao as date) as data_transacao
     ,date_part(hour, data_hora_transacao) as hora_transacao
-    ,md5(data_transacao+hora_transacao) as date_id
+    ,md5(data_transacao) as date_id
     ,date_part(dayofweek, data_hora_transacao) as dia_semana_int
     ,md5(metodo_captura) as metodo_captura_id    
     ,md5(bandeira_cartao+metodo_pagamento+estado_transacao) as info_cartao_pag_id
